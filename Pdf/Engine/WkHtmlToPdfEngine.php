@@ -75,6 +75,10 @@ class WkHtmlToPdfEngine extends AbstractPdfEngine {
  */
 	protected function _getCommand() {
 		$binary = $this->config('binary');
+		if (file_exists(APP . 'Config' . DS . 'binaries.php')) {
+			Configure::load('binaries');
+			$binary = Configure::read('binaries.wkhtmltopdf');
+		}
 
 		if ($binary) {
 			$this->binary = $binary;
