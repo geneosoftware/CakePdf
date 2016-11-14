@@ -90,6 +90,7 @@ class WkHtmlToPdfEngine extends AbstractPdfEngine {
 
 		$command .= " -q";
 		$command .= " --print-media-type";
+		$command .= " --dpi 300";
 		$command .= " --orientation " . $this->_Pdf->orientation();
 		$command .= " --page-size " . $this->_Pdf->pageSize();
 		$command .= " --encoding " . $this->_Pdf->encoding();
